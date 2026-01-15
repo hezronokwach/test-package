@@ -58,6 +58,27 @@ const countryMapper: MapperFunction<Country> = mapper('countries')
 const countryOptions: SelectOption[] = countryMapper(countries)
 ```
 
+### With Additional Fields
+
+```typescript
+import { mapper } from 'unixar-mappers'
+import type { Department } from 'unixar-mappers'
+
+const departments: Department[] = [
+  { id: 1, display_name: 'Computer Science', alias: 'CS', campus: undefined },
+  { id: 2, display_name: 'Mathematics', alias: 'MATH', campus: undefined }
+]
+
+const departmentMapper = mapper<Department>('departments')
+const options = departmentMapper(departments)
+
+console.log(options)
+// Output: [
+//   { value: 1, label: 'Computer Science', caption: 'CS' },
+//   { value: 2, label: 'Mathematics', caption: 'MATH' }
+// ]
+```
+
 ## Available Mappers
 
 The package provides mappers for the following data types:
