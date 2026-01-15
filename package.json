@@ -1,0 +1,29 @@
+{
+  "name": "unixar-mappers",
+  "version": "1.0.0",
+  "description": "Type-safe mapper functions for transforming model data to select options",
+  "main": "./build/index.js",
+  "module": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "type": "module",
+  "files": [
+    "build",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hezronokwach/test-package.git"
+  },
+  "keywords": ["mapper", "typescript", "select-options"],
+  "author": "fayaz",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "vitest": "^1.0.0"
+  }
+}
