@@ -1,6 +1,14 @@
 import { describe, it, expect } from 'vitest'
 import { mapper } from '../src/index'
-import type { AcademicLevel, Country, Campus, Department, Gender, Honorific, Religion, MaritalStatus } from '../src/types/models'
+import type { 
+    AcademicLevel,
+    Country,
+    Campus,
+    Department,
+    Gender,
+    Honorific,
+    Religion,
+    MaritalStatus } from '../src/types/models'
 
 describe('Function Mappers', () => {
   it('should map academic levels correctly', () => {
