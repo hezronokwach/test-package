@@ -179,6 +179,91 @@ test-package/
 └── README.md
 ```
 
+## Troubleshooting
+
+### Installation Issues
+
+**Problem:** Package fails to install from GitHub
+
+**Solution:**
+- Verify you have access to the repository
+- Check your GitHub authentication
+- Try using a personal access token:
+  ```bash
+  npm install git+https://<token>@github.com/hezronokwach/test-package.git
+  ```
+
+### TypeScript Issues
+
+**Problem:** Types not recognized in IDE
+
+**Solution:**
+- Restart your TypeScript server
+- Check that `node_modules/unixar-mappers/build/index.d.ts` exists
+- Verify `tsconfig.json` includes `node_modules` in type resolution
+
+**Problem:** "Cannot find module 'unixar-mappers'"
+
+**Solution:**
+- Run `npm install` to ensure package is installed
+- Check `package.json` has the correct dependency entry
+- Clear node_modules and reinstall:
+  ```bash
+  rm -rf node_modules package-lock.json
+  npm install
+  ```
+
+### Runtime Issues
+
+**Problem:** Mapper returns undefined
+
+**Solution:**
+- Verify the mapper name is correct (check Available Mappers list)
+- Ensure input data matches the expected type
+- Check that the model has required fields (id, name, etc.)
+
+**Problem:** Missing caption or avatar fields
+
+**Solution:**
+- Not all mappers support caption/avatar fields
+- Check the mapper implementation in source code
+- Only campuses, departments, and institutions support these fields
+
+### Build Issues
+
+**Problem:** Build fails with TypeScript errors
+
+**Solution:**
+- Run `npm install` to ensure dependencies are installed
+- Check TypeScript version compatibility (requires 5.2.2+)
+- Verify all type definitions are correct
+
+**Problem:** Tests fail after changes
+
+**Solution:**
+- Run `npm test` to see specific failures
+- Ensure test data matches expected output format
+- Rebuild the package: `npm run build`
+
+## Contributing
+
+Contributions are welcome! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on:
+- Adding new mappers
+- Version update process
+- Development workflow
+- Pull request guidelines
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for a list of changes in each version.
+
+## Resources
+
+- [GitHub Repository](https://github.com/hezronokwach/test-package)
+- [Issue Tracker](https://github.com/hezronokwach/test-package/issues)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Changelog](CHANGELOG.md)
+
 ## License
 
 MIT
